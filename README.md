@@ -1,4 +1,4 @@
-# IRS-Assisted Multi-Operator Coexistence in MATLAB
+# IRS-Assisted Multi-Operator Coexistence (Wideband)
 
 This repository provides a MATLAB implementation for studying **operator coexistence in IRS-assisted networks**.  
 It builds upon the official MathWorks example: [Model Reconfigurable Intelligent Surfaces with CDL Channels](https://de.mathworks.com/help/5g/ug/model-reconfigurable-intelligent-surfaces-with-cdl-channels.html).  

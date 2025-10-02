@@ -40,19 +40,8 @@ After all operators are created, you can use the `combineAtReceiver` function:
 1. Select the **operator of interest** from `ops`. 
 2. Choose a **subset of other operators’ IRS reflections** to include  
 3. Compute the **combined received waveform**, including noise and selected cross reflections  
-4. Compute SNR metrics for different numbers of subcarriers (`N_sub_list`)  
+4. Compute SNR for different numbers of subcarriers (`N_sub_list`)  
 
-Example:
-
-```matlab
-op_idx = 5;                       % Operator of interest (last operator)
-cross_indices = 1:length(ops(op_idx).cross);  % Cross contributions from previously created operators
-
-combined_21    = combineAtReceiver(ops(op_idx), cross_indices(1), carrier, pdsch, N_sub_list, N);
-combined_321   = combineAtReceiver(ops(op_idx), cross_indices(1:2), carrier, pdsch, N_sub_list, N);
-combined_4321  = combineAtReceiver(ops(op_idx), cross_indices(1:3), carrier, pdsch, N_sub_list, N);
-combined_54321 = combineAtReceiver(ops(op_idx), cross_indices(1:4), carrier, pdsch, N_sub_list, N); 
-```
 
 ### 3. Monte Carlo Simulation
 
@@ -66,7 +55,7 @@ The simulation can be repeated over multiple Monte Carlo iterations (`nMC`) to c
 1. Create all operators sequentially using `simulateOperator` and store them in the `ops` array.  
 2. Cross contributions between operators are automatically computed during creation.  
 3. Select an operator of interest (typically the last operator) to include any subset of previous operators’ IRS reflections.  
-4. Use `combineAtReceiver` to compute the combined received waveform and SNR metrics for different subcarrier counts (`N_sub_list`).  
+4. Use `combineAtReceiver` to compute the combined received waveform and other metrics for different subcarrier counts (`N_sub_list`).  
 5. Store the desired metrics for analysis across iterations.
 
 ---

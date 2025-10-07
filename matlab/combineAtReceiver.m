@@ -12,12 +12,12 @@ function combined = combineAtReceiver(op, includeCrossIndices, carrier, pdsch, N
 
 
     rxCombinedNoisless = op.rxWaveformNoisless;
-    noise=op.noise;
+    noise_comb=op.noise;
 
 
     for i = includeCrossIndices
         rxCombinedNoisless = rxCombinedNoisless + op.cross(i).rxWaveformNoisless;
-        noise_comb = noise + op.cross(i).noise;
+        noise_comb = noise_comb + op.cross(i).noise;
     end
 
     

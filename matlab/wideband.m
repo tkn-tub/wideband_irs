@@ -40,8 +40,9 @@ SCS_kHz = carrier.SubcarrierSpacing;
 N_sub_list = round((BW_list_MHz*1e6) / (SCS_kHz*1e3));
 
 
-nMC = 100;   % number of Monte Carlo runs
+nMC =500;   % number of Monte Carlo runs
 all_mean_SNR_21 = zeros(nMC, length(N_sub_list));
+all_mean_SNR_2 = zeros(nMC, length(N_sub_list));
 all_mean_SNR_321 = zeros(nMC, length(N_sub_list));
 all_mean_SNR_4321 = zeros(nMC, length(N_sub_list));
 all_mean_SNR_54321 = zeros(nMC, length(N_sub_list));
@@ -68,6 +69,7 @@ for mc = 1:nMC
     % Operator of interest
     op_idx = 5;  % e.g., op5
     cross_indices = 1:length(ops(op_idx).cross); % all available cross contributions
+
 
     all_mean_SNR_21(mc,:)    = combineAtReceiver(ops(op_idx), cross_indices(1), carrier, pdsch, N_sub_list, N).mean_SNR_partial(:)';
     all_mean_SNR_321(mc,:)   = combineAtReceiver(ops(op_idx), cross_indices(1:2), carrier, pdsch, N_sub_list, N).mean_SNR_partial(:)';

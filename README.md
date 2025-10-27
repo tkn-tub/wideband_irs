@@ -64,5 +64,6 @@ The simulation can be repeated over multiple Monte Carlo iterations (`nMC`) to c
 
 Example scripts for plotting and analyzing the simulation results using Python are provided in the `plots/` directory.  
 
+[[1]](https://www.sciencedirect.com/science/article/pii/S0140366425002981?via%3Dihub) J. Angjo, A. Zubow and F. Dressler, "Operator coexistence in IRS-assisted mmWave networks: A wideband approach," Computer Communications, 244, December 2025, doi: 10.1016/j.comcom.2025.108341. \
 
 
